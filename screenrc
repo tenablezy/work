@@ -1,12 +1,15 @@
 # Start message
 startup_message off 
 bell_msg ""
+vbell off
  
 # Set default encoding using utf8
 defutf8 on
  
 # Refresh the display when exiting programs
 altscreen on
+
+escape `a
  
  
 # Dynamic title
@@ -32,7 +35,7 @@ bind s
  
  
 defencoding utf8
-caption always "%{.KW} %-w%{.mW}[%n] %t%{.KW}%+w"
+#caption always "%{.KW} %-w%{.mW}[%n] %t%{.KW}%+w"
 hardstatus alwayslastline "%{R}[ %{w}%1` %{R}]%=%{M}%e %{G}%H %{Y} %c %{R} %d/%m/%Y %{K} Load: %l %{w}"
  
 #term screen-256color
@@ -40,9 +43,9 @@ attrcolor b ".I"
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 defbce on
  
-screen 0
-select 0
+#screen 0
+#select 0
 exec ssh-agent screen
 exec true
-defscrollback 10000
+defscrollback 1000000
 source $HOME/.ssh/screen_agent

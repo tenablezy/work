@@ -29,19 +29,20 @@ set showcmd
 set showmode
 set nowrap
 set autowrite
-set mouse=a
+"set mouse
  
 "#######################################################
 " Color
 set t_Co=256
 colo torte
-set cursorline
-set cursorcolumn
+"set cursorline
+"set cursorcolumn
 set hlsearch
 hi CursorLine cterm=none ctermbg=DarkMagenta ctermfg=White
 hi CursorColumn cterm=none ctermbg=DarkMagenta ctermfg=White
 hi Search cterm=reverse ctermbg=none ctermfg=none
  
+
 "#######################################################
 " statusline
 set laststatus=2
@@ -79,6 +80,7 @@ else
     echoerr "If +multi_byte is not included, you should compile Vim with big features."
 endif
  
+if (&mouse == "a")
 "#######################################################
 " shortcut
 " Toggle mouse
@@ -156,3 +158,4 @@ function SwitchFullSimpleMode()
         echo "Switch to full mode.(mouse, number, cindent, nowrap)"
     endif
 endfunction
+endif
