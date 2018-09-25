@@ -35,12 +35,13 @@ bind s
  
  
 defencoding utf8
-#caption always "%{.KW} %-w%{.mW}[%n] %t%{.KW}%+w"
-hardstatus alwayslastline "%{R}[ %{w}%1` %{R}]%=%{M}%e %{G}%H %{Y} %c %{R} %d/%m/%Y %{K} Load: %l %{w}"
+#caption always "%{.KW} %-w%{.mW}[%n] %t%{.KW}%+w %= %{G}%H %{Y} %c %d/%m/%Y %{K}"
+hardstatus alwayslastline "%{.KW} %-w%{.mW}[%n] %t%{.KW}%+w %= %{G}%H %{Y} %c %d/%m/%Y %{K}"
+#hardstatus alwayslastline "%{R}[ %{K}%1` %{R}]%=%{M}%e %{G}%H %{Y} %c %{R} %d/%m/%Y %{K} Load: %l %{K}"
  
 #term screen-256color
 attrcolor b ".I"
-termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+#termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 defbce on
  
 #screen 0
