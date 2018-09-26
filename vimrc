@@ -163,3 +163,12 @@ function SwitchFullSimpleMode()
     endif
 endfunction
 endif
+
+
+map <F5> :call RunPython()<CR>
+func! RunPython()
+    exec "W"
+    if &filetype == 'python'
+        exec "!time python3 %"
+    endif
+endfunc
