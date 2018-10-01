@@ -16,7 +16,7 @@ set noruler
 set ignorecase
 set smartcase
 set incsearch
-set cindent
+"set cindent
 set expandtab
 set tabstop=2
 set softtabstop=2
@@ -47,10 +47,10 @@ hi Search cterm=reverse ctermbg=none ctermfg=none
 " statusline
 set laststatus=2
 set statusline=%#filepath#[%{expand('%:p')}]%#filetype#[%{strlen(&fenc)?&fenc:&enc},\ %{&ff},\ %{strlen(&filetype)?&filetype:'plain'}]%#filesize#%{FileSize()}%{IsBinary()}%=%#position#%c,%l/%L\ [%3p%%]
-hi filepath cterm=none ctermbg=0 ctermfg=40
-hi filetype cterm=none ctermbg=0 ctermfg=45
-hi filesize cterm=none ctermbg=0 ctermfg=225
-hi position cterm=none ctermbg=0 ctermfg=228
+hi filepath cterm=none ctermbg=20 ctermfg=245
+hi filetype cterm=none ctermbg=20 ctermfg=245
+hi filesize cterm=none ctermbg=20 ctermfg=245
+hi position cterm=none ctermbg=20 ctermfg=248
 "hi filepath cterm=none ctermbg=238 ctermfg=40
 "hi filetype cterm=none ctermbg=238 ctermfg=45
 "hi filesize cterm=none ctermbg=238 ctermfg=225
@@ -167,7 +167,6 @@ endif
 
 map <F5> :call RunPython()<CR>
 func! RunPython()
-    exec "W"
     if &filetype == 'python'
         exec "!time python3 %"
     endif
